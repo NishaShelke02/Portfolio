@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Education</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      font-family: 'Arial', sans-serif;
+    }
+    /* Dropdown Menu */
+    .dropdown-menu-wrapper {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .menu-btn {
+      background: #111;
+      color: #fff;
+      border: none;
+      font-size: 22px;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+      transition: background 0.3s ease;
+    }
+    .menu-btn:hover {
+      background: #3b82f6;
+      box-shadow: 0 5px 15px #3b82f6aa;
+    }
+    .menu-list {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background: #fff;
+      list-style: none;
+      margin: 0;
+      padding: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      min-width: 160px;
+      user-select: none;
+    }
+    .menu-list.active {
+      display: block;
+      animation: fadeInDropdown 0.3s ease forwards;
+    }
+    @keyframes fadeInDropdown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .menu-list a {
+      display: block;
+      padding: 12px 22px;
+      color: #111;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .menu-list a:hover {
+      background: #3b82f6;
+      color: #fff;
+      border-radius: 6px;
+      box-shadow: 0 3px 8px #3b82f6aa;
+    }
+    /* Timeline Style */
+    .timeline {
+      position: relative;
+      margin: 2rem auto;
+      padding: 1rem 0;
+      max-width: 700px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 4px;
+      height: 100%;
+      background: #fff;
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 1rem 2rem;
+      box-sizing: border-box;
+    }
+    .timeline-item.left {
+      left: 0;
+      text-align: right;
+    }
+    .timeline-item.right {
+      left: 50%;
+    }
+    .timeline-content {
+      background: #fff;
+      color: #333;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      animation: fadeInUp 0.6s ease;
+    }
+    .timeline-content h3 {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #3b82f6;
+    }
+    .timeline-content p {
+      font-size: 0.95rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #3b82f6;
+      border: 3px solid #fff;
+      z-index: 1;
+    }
+    .timeline-item.left::before {
+      right: -10px;
+    }
+    .timeline-item.right::before {
+      left: -10px;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media(max-width: 768px) {
+      .timeline::before { left: 20px; }
+      .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        text-align: left !important;
+      }
+      .timeline-item.left, .timeline-item.right {
+        left: 0;
+      }
+      .timeline-item::before {
+        left: 20px;
+      }
+    }
+  </style>
+</head>
+<body class="text-white">
+  <!-- Dropdown Menu -->
+  <div class="dropdown-menu-wrapper">
+    <button class="menu-btn" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    <ul class="menu-list" role="menu" aria-label="Main navigation">
+      <li><a href="index.html" role="menuitem">Home</a></li>
+      <li><a href="about.html" role="menuitem">About</a></li>
+      <li><a href="skill.html" role="menuitem">Skills</a></li>
+      <li><a href="project.html" role="menuitem">Projects</a></li>
+      <li><a href="education.html" role="menuitem">Education</a></li>
+      <li><a href="contact.html" role="menuitem">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Page Header -->
+  <header class="text-center py-10">
+    <h1 class="text-4xl font-bold mb-2">My Education</h1>
+    <p class="text-lg opacity-80">A journey of learning and growth</p>
+  </header>
+
+  <!-- Timeline Section -->
+  <section class="timeline">
+    <div class="timeline-item left">
+      <div class="timeline-content">
+        <h3>SSC - 2017</h3>
+        <p>Kavi Ravindranath Tagore English Medium School</p>
+      </div>
+    </div>
+    <div class="timeline-item right">
+      <div class="timeline-content">
+        <h3>HSC - 2019</h3>
+        <p>MRMV Higher Education School</p>
+      </div>
+    </div>
+    <div class="timeline-item left">
+      <div class="timeline-content">
+        <h3>B.E. - 2023</h3>
+        <p>SNJB's Late Sau Kantabai Bhavarlalji Jain College of Engineering</p>
+      </div>
+    </div>
+    <div class="timeline-item right">
+      <div class="timeline-content">
+        <h3>Internship</h3>
+        <p>Sunanda Info Tech Pvt Ltd</p>
+      </div>
+    </div>
+    <div class="timeline-item left">
+      <div class="timeline-content">
+        <h3>C-DAC - 2025</h3>
+        <p>C-DAC Mumbai</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Dropdown Menu Toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const menuList = document.querySelector('.menu-list');
+    if (menuBtn && menuList) {
+      menuBtn.addEventListener('click', () => {
+        menuList.classList.toggle('active');
+      });
+      menuList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuList.classList.remove('active');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

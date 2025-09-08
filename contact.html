@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Nisha Shelke</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+    }
+
+    /* Dropdown Menu */
+    .dropdown-menu-wrapper {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .menu-btn {
+      background: #111;
+      color: #fff;
+      border: none;
+      font-size: 22px;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+      transition: background 0.3s ease;
+    }
+    .menu-btn:hover {
+      background: #3b82f6;
+      box-shadow: 0 5px 15px #3b82f6aa;
+    }
+    .menu-list {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background: #fff;
+      list-style: none;
+      margin: 0;
+      padding: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      min-width: 160px;
+      user-select: none;
+    }
+    .menu-list.active {
+      display: block;
+      animation: fadeInDropdown 0.3s ease forwards;
+    }
+    @keyframes fadeInDropdown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .menu-list a {
+      display: block;
+      padding: 12px 22px;
+      color: #111;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .menu-list a:hover {
+      background: #3b82f6;
+      color: #fff;
+      border-radius: 6px;
+      box-shadow: 0 3px 8px #3b82f6aa;
+    }
+
+    /* Contact Card */
+    .contact-card {
+      background: #fff;
+      color: #333;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .contact-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+    .contact-card img {
+      max-width: 180px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .contact-card h2 {
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .contact-card p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+    .contact-card a {
+      text-decoration: none;
+      color: #3b82f6;
+      font-weight: 600;
+    }
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Global Dropdown Menu -->
+  <div class="dropdown-menu-wrapper">
+    <button class="menu-btn"><i class="fas fa-bars"></i></button>
+    <ul class="menu-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skill.html">Skills</a></li>
+      <li><a href="project.html">Projects</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Contact Section -->
+  <section class="d-flex justify-content-center align-items-center vh-100">
+    <div class="contact-card text-center">
+      <img src="photo.jpeg" alt="Nisha Darekar">
+      <h2>Get in Touch</h2>
+      <p><i class="fas fa-user me-2 text-primary"></i> <b>Nisha Darekar</b></p>
+      <p><i class="fas fa-phone me-2 text-success"></i> +91 9699379795</p>
+      <p><i class="fas fa-envelope me-2 text-danger"></i> 
+        <a href="mailto:nishashelke220@gmail.com">nishashelke220@gmail.com</a>
+      </p>
+      <p class="mt-3">Interested to collaborate? <br> Feel free to drop me an email.</p>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Dropdown Menu Toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const menuList = document.querySelector('.menu-list');
+    if (menuBtn && menuList) {
+      menuBtn.addEventListener('click', () => {
+        menuList.classList.toggle('active');
+      });
+      menuList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuList.classList.remove('active');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

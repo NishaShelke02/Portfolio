@@ -1,0 +1,309 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h5 {
+  font-weight: 700;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.underline {
+  width: 60px;
+  height: 3px;
+  background: #007bff;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero-img {
+  max-width: 500px;
+  margin-top: 30px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu-wrapper {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.menu-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.menu-list {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.menu-list.active {
+  display: block;
+}
+
+.menu-list li {
+  margin: 0;
+}
+
+.menu-list a {
+  display: block;
+  padding: 10px 20px;
+  color: #111;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.menu-list a:hover {
+  background: #f1f1f1;
+}
+
+
+/* About Section */
+#about {
+  background: #fff;
+  border-radius: 10px;
+}
+
+.about-card {
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.about-card i {
+  margin-bottom: 12px;
+}
+
+/* Skills */
+#skills {
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+#skills h5 {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* Projects */
+#projects ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+#projects li {
+  margin-bottom: 10px;
+}
+
+/* Experience */
+#experience {
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+/* Education */
+#education ul {
+  list-style: square;
+  padding-left: 20px;
+}
+
+/* Contact */
+#contact {
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+#contactForm {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contact button {
+  padding: 10px 20px;
+}
+
+/* Footer */
+footer {
+  background: #fff;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
+
+/* Floating Home Button */
+.home-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 50%;
+  padding: 12px 15px;
+  color: #007bff;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  z-index: 1200;
+}
+
+.home-btn:hover {
+  background: #007bff;
+  color: white;
+}
+/* Dropdown Menu */
+.dropdown-menu-wrapper {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.menu-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Dropdown Container */
+.menu-list {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  min-width: 180px;
+  overflow: hidden;
+}
+
+/* Show with animation */
+.menu-list.active {
+  display: block;
+  animation: dropdownScale 0.35s ease forwards;
+}
+
+/* Scale dropdown open effect */
+@keyframes dropdownScale {
+  from { transform: scaleY(0); opacity: 0; transform-origin: top; }
+  to { transform: scaleY(1); opacity: 1; transform-origin: top; }
+}
+
+/* Links inside dropdown */
+.menu-list a {
+  display: block;
+  padding: 12px 22px;
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: background 0.25s;
+}
+
+/* Fade + slide animation for links */
+.menu-list.active a {
+  animation: slideFade 0.4s ease forwards;
+}
+
+.menu-list.active a:nth-child(1) { animation-delay: 0.1s; }
+.menu-list.active a:nth-child(2) { animation-delay: 0.2s; }
+.menu-list.active a:nth-child(3) { animation-delay: 0.3s; }
+.menu-list.active a:nth-child(4) { animation-delay: 0.4s; }
+.menu-list.active a:nth-child(5) { animation-delay: 0.5s; }
+.menu-list.active a:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideFade {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.menu-list a:hover {
+  background: #007bff;
+  color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px #007bff66;
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hero Image specific */
+.hero-img {
+  max-width: 500px;
+  margin: 30px auto;
+  border-radius: 12px;
+}
+
+/* Responsive Layout Tweaks */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero-img {
+    max-width: 90%;
+  }
+
+  .about-card {
+    margin-bottom: 20px;
+  }
+
+  .menu-btn {
+    font-size: 20px;
+    padding: 8px 12px;
+  }
+}
