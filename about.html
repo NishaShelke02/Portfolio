@@ -9,102 +9,207 @@
 
   <style>
     body {
-      background: #f8f9fa;
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-    }
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  color: #f0f0f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-    /* Dropdown Menu */
-    .dropdown-menu-wrapper {
-      position: fixed;
-      top: 15px;
-      right: 20px;
-      z-index: 1000;
-    }
-    .menu-btn {
-      background: #111;
-      color: #fff;
-      border: none;
-      font-size: 22px;
-      padding: 10px 15px;
-      border-radius: 6px;
-      cursor: pointer;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.5);
-      transition: background 0.3s ease;
-    }
-    .menu-btn:hover {
-      background: #3b82f6;
-      box-shadow: 0 5px 15px #3b82f6aa;
-    }
+/* Dropdown Menu */
+.dropdown-menu-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  z-index: 1100;
+}
+.menu-btn {
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.6);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+.menu-btn:hover {
+  background: #7c3aed;
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.7);
+}
 
-    .menu-list {
-      display: none;
-      position: absolute;
-      top: 50px;
-      right: 0;
-      background: #fff;
-      list-style: none;
-      margin: 0;
-      padding: 10px 0;
-      border-radius: 8px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-      min-width: 180px;
-      overflow: hidden;
-    }
-    .menu-list.active {
-      display: block;
-      animation: dropdownScale 0.4s ease forwards;
-    }
-    @keyframes dropdownScale {
-      from { transform: scaleY(0); opacity: 0; transform-origin: top; }
-      to { transform: scaleY(1); opacity: 1; transform-origin: top; }
-    }
+.menu-list {
+  display: none;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  list-style: none;
+  margin: 0;
+  padding: 12px 0;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  min-width: 200px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+.menu-list.active {
+  display: block;
+  animation: dropdownScale 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes dropdownScale {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: top;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+    transform-origin: top;
+  }
+}
 
-    /* Links with stagger effect */
-    .menu-list a {
-      display: block;
-      padding: 12px 22px;
-      color: #111;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    .menu-list.active a {
-      animation: slideFade 0.4s ease forwards;
-    }
-    .menu-list.active a:nth-child(1) { animation-delay: 0.1s; }
-    .menu-list.active a:nth-child(2) { animation-delay: 0.2s; }
-    .menu-list.active a:nth-child(3) { animation-delay: 0.3s; }
-    .menu-list.active a:nth-child(4) { animation-delay: 0.4s; }
-    .menu-list.active a:nth-child(5) { animation-delay: 0.5s; }
-    .menu-list.active a:nth-child(6) { animation-delay: 0.6s; }
+/* Links with stagger effect */
+.menu-list a {
+  display: block;
+  padding: 14px 28px;
+  color: #4b4b4b;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.menu-list.active a {
+  animation: slideFade 0.35s ease forwards;
+}
+.menu-list.active a:nth-child(1) {
+  animation-delay: 0.08s;
+}
+.menu-list.active a:nth-child(2) {
+  animation-delay: 0.16s;
+}
+.menu-list.active a:nth-child(3) {
+  animation-delay: 0.24s;
+}
+.menu-list.active a:nth-child(4) {
+  animation-delay: 0.32s;
+}
+.menu-list.active a:nth-child(5) {
+  animation-delay: 0.40s;
+}
+.menu-list.active a:nth-child(6) {
+  animation-delay: 0.48s;
+}
 
-    @keyframes slideFade {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    .menu-list a:hover {
-      background: #3b82f6;
-      color: #fff;
-      border-radius: 6px;
-      box-shadow: 0 3px 8px #3b82f6aa;
-    }
+.menu-list a:hover {
+  background: #7c3aed;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.6);
+}
 
-    /* Section Styling */
-    h2 {
-      font-weight: 700;
-    }
-    .p-3 {
-      border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .p-3:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    }
+/* Section Styling */
+h2 {
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1.2px;
+}
+.p-3 {
+  border-radius: 16px;
+  background: #fff;
+  color: #333;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.p-3:hover {
+  transform: translateY(-6px) scale(1.07);
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.3);
+}
+
+/* About Section Container */
+#about .container {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+}
+
+/* Paragraphs */
+#about p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: black;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+/* Image Styling */
+#about img {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease;
+}
+#about img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* Icon Colors */
+.fas.fa-graduation-cap {
+  color: #6366f1;
+}
+.fas.fa-award {
+  color: #10b981;
+}
+.fas.fa-globe {
+  color: #3b82f6;
+}
+
+/* Cards Text */
+.p-3 h5 {
+  color: #222;
+  margin-bottom: 8px;
+}
+.p-3 p {
+  color: #555;
+  font-weight: 500;
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+  #about .container {
+    padding: 30px 20px;
+  }
+  .menu-btn {
+    font-size: 20px;
+    padding: 10px 14px;
+  }
+  .menu-list a {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}
+
   </style>
 </head>
 <body>
